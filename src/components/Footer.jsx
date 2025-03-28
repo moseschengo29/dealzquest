@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="w-full border-t border-n-1 py-3 px-6">
       <div className=" flex  sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <p className="caption text-n-4 lg:block">
-          © {new Date().getFullYear()}. All rights reserved.
+          © {new Date().getFullYear()}. DealzQuest - All rights reserved &copy;
         </p>
 
         <ul className="flex gap-5 flex-wrap">

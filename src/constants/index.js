@@ -215,6 +215,94 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "2",
+    title: "Play and Win",
+    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
   }
 ];
 
@@ -251,3 +339,66 @@ export const socials = [
     url: "#",
   },
 ];
+
+export const searches = [
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+  {
+    title: 'PS5 Pro'
+  },
+]

@@ -12,7 +12,7 @@ const Section = ({
       relative 
       ${
         customPaddings ||
-        `py-10 lg:py-8 xl:py-10 `
+        `py-10 lg:py-8 xl:py-2 `
       } 
       ${className || ""}`}
     >

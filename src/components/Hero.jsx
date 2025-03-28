@@ -39,7 +39,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
           Effortlessly compare prices across multiple online stores in real time and unlock the best deals—saving you time, money, and the hassle of manual searching!
           </p>
-          <Link to='/games'>
+          <Link to='/search'>
             <Button>
               Search For Products
             </Button>
