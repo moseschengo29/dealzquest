@@ -280,30 +280,36 @@ export const benefits = [
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
   },
+
+];
+
+export const features = [
+  {
+    id: "0",
+    title: "Real-Time Price Comparison.",
+    text: "Find the lowest prices across multiple online stores instantly—no more switching tabs or hunting manually.",
+    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "1",
+    title: "Smart Recommendations.",
+    text: "Get tailored product suggestions based on your searches, powered by intelligent algorithms.",
+    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    iconUrl: benefitIcon2,
+    imageUrl: benefitImage2,
+    light: true,
+  },
   {
     id: "2",
-    title: "Play and Win",
-    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
+    title: "Real-time Search History.",
+    text: "Easily access your recent searches and previous results, so you can pick up right where you left off.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
   },
-  {
-    id: "2",
-    title: "Play and Win",
-    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
-  },
-  {
-    id: "2",
-    title: "Play and Win",
-    text: "Engage in epic gaming sessions, complete missions, and climb the leaderboards to win amazing prizes.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
-  }
+  
 ];
 
 
@@ -401,4 +407,44 @@ export const searches = [
   {
     title: 'PS5 Pro'
   },
+]
+
+export const products = [
+  {
+    id: "b9032c9d",
+    name: "Itel Flip 1 Folding Phone - 2.4\" - 1200mAh (Dual SIM), Wireless FM, Blue (1YR WRTY)",
+    price: 2957,
+    image: "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/39/8615152/1.jpg?8998",
+    source: "Jumia Kenya",
+    url: "https://www.jumia.co.ke/itel-flip-1-folding-phone-2.4-1200mah-dual-sim-wireless-fm-blue-1yr-wrty-251516893.html",
+    rating: 3.1
+},
+{
+  id: "b9032c9d",
+  name: "Itel Flip 1 Folding Phone - 2.4\" - 1200mAh (Dual SIM), Wireless FM, Blue (1YR WRTY)",
+  price: 2957,
+  image: "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/39/8615152/1.jpg?8998",
+  source: "Jumia Kenya",
+  url: "https://www.jumia.co.ke/itel-flip-1-folding-phone-2.4-1200mah-dual-sim-wireless-fm-blue-1yr-wrty-251516893.html",
+  rating: 3.1
+},
+{
+  id: "b9032c9d",
+  name: "Itel Flip 1 Folding Phone - 2.4\" - 1200mAh (Dual SIM), Wireless FM, Blue (1YR WRTY)",
+  price: 2957,
+  image: "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/39/8615152/1.jpg?8998",
+  source: "Jumia Kenya",
+  url: "https://www.jumia.co.ke/itel-flip-1-folding-phone-2.4-1200mah-dual-sim-wireless-fm-blue-1yr-wrty-251516893.html",
+  rating: 3.1
+},
+{
+  id: "b9032c9d",
+  name: "Itel Flip 1 Folding Phone - 2.4\" - 1200mAh (Dual SIM), Wireless FM, Blue (1YR WRTY)",
+  price: 2957,
+  image: "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/39/8615152/1.jpg?8998",
+  source: "Jumia Kenya",
+  url: "https://www.jumia.co.ke/itel-flip-1-folding-phone-2.4-1200mah-dual-sim-wireless-fm-blue-1yr-wrty-251516893.html",
+  rating: 3.1
+},
+
 ]

@@ -9,6 +9,9 @@ import SignIn from "./pages/SignIn";
 import allRoutes from "./routes/routes";
 import { Suspense, useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+import Search from "./pages/Search";
 
 
 const App = () => {
@@ -57,6 +60,7 @@ const App = () => {
     <Loader /> : 
     <>
     <QueryClientProvider client={queryClient}>
+        <AuthProvider>
         <ReactQueryDevtools initialIsOpen={false}/>
         <Toaster {...toasterStyle}/>
           <Routes>
@@ -64,23 +68,27 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<SignIn />} />
+              <Route path="/search" element={<Search />} />
 
-              {allRoutes.map((route, index) => {
-                    const { path, component: Component } = route;
-                    return (
-                      <Route
-                        key={index}
-                        path={path}
-                        element={
-                          <Suspense fallback={<Loader />}>
-                            <Component />
-                          </Suspense>
-                        }
-                      />
-                    );
-                  })}
+              <Route element={<ProtectedRoutes />}>
+                {allRoutes.map((route, index) => {
+                      const { path, component: Component } = route;
+                      return (
+                        <Route
+                          key={index}
+                          path={path}
+                          element={
+                            <Suspense fallback={<Loader />}>
+                              <Component />
+                            </Suspense>
+                          }
+                        />
+                      );
+                    })}
+                  </Route>
             </Route>
           </Routes>
+          </AuthProvider>
         </QueryClientProvider>
 
           

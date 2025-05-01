@@ -3,11 +3,15 @@
 import { useState } from "react";
 import { HiX, HiEye, HiEyeOff } from "react-icons/hi";
 import Button from "./Button";
+import toast from "react-hot-toast";
+import { useAuth } from "../context/AuthContext";
 
 function SigninModal({ close, showSignUp }) {
+  const {signin} = useAuth();
+
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState ({
-    email: "",
+    username: "",
     password: ""
   })
 
@@ -22,11 +26,12 @@ function SigninModal({ close, showSignUp }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(formData.email === '' || formData.password === ''){
-        alert('Please fill in all fields')
+    if(formData.username === '' || formData.password === ''){
+        toast.error('Please fill in all fields')
         return;
     }
     console.log(formData)
+    signin(formData)
   }
 
   return (
@@ -45,13 +50,13 @@ function SigninModal({ close, showSignUp }) {
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label className="block text-base font-medium text-gray-300 mb-1">
-                Email <span className="text-red-500 text-sm">*</span>
+                Username <span className="text-red-500 text-sm">*</span>
             </label>
             <input 
-              type="email" 
-              name="email"
+              type="text" 
+              name="username"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-transparent text-white focus:ring-1 focus:ring-[#FFF94F] focus:border-[#FFF94F] outline-none transition-all"
-              placeholder="your@email.com"
+              placeholder="username"
               onChange={handleChange}
             />
           </div>
@@ -62,7 +67,7 @@ function SigninModal({ close, showSignUp }) {
             </label>
             <input 
               type={showPassword ? "text" : "password"} 
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-transparent text-white focus:ring-1 focus:ring-[#FFF94F] focus:border-[#FFF94F] outline-none transition-all pr-12"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-transparent text-yellow-300x focus:ring-1 focus:ring-[#FFF94F] focus:border-[#FFF94F] outline-none transition-all pr-12"
               placeholder="••••••••"
               name="password"
               onChange={handleChange}

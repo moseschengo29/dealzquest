@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const DropdownUser = () => {
+const DropdownUser = ({logout}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
+
 
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -76,7 +76,7 @@ const DropdownUser = () => {
             <FaRegHeart size={20} />
             Favourites
             </Link>
-            <button className="flex items-center gap-3.5 py-3 px-6 text-sm font-medium hover:bg-gray-900 duration-300 ease-in-out hover:text-primary lg:text-base">
+            <button onClick={logout} className="flex items-center gap-3.5 py-3 px-6 text-sm font-medium hover:bg-gray-900 duration-300 ease-in-out hover:text-primary lg:text-base">
             <svg
                 className="fill-current"
                 width="22"

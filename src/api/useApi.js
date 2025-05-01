@@ -1,16 +1,112 @@
-export async function getAllGames(){
-    const res = await fetch('https://games.gamepix.com/games?sid=', {
+import { getTokensInCookies } from "../features/auth/authCookies";
+
+const baseUrl = import.meta.env.VITE_API_URL;
+const {accessToken} = getTokensInCookies()
+
+
+export async function getSearchHistory(){
+    const res = await fetch(`${baseUrl}/api/user/search-history`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-        },
+          'Authorization': `Bearer ${accessToken}`
+      }
       });
 
 
     if(!res.ok){
-        throw new Error('Could not fetch the games');
+        throw new Error('Could not fetch the user search history');
     }
     const data = await res.json()
 
     return data;
 }
+
+export async function getFavourites(){
+  const res = await fetch(`${baseUrl}/api/user/favorites/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    }
+    });
+
+
+  if(!res.ok){
+      throw new Error('Could not fetch the user search history');
+  }
+  const data = await res.json()
+
+  return data;
+}
+
+export async function removeItemFromFavourites(id) {
+  const { accessToken } = getTokensInCookies();
+
+  const response = await fetch(
+    `${baseUrl}/api/user/favorites/${id}/`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }
+  );
+
+  if (response.ok || response.status === 204) {
+    // No content or successful deletion
+    return;
+  } else {
+    // Handle error
+    throw new Error('Failed to remove item');
+  }
+}
+
+export async function clearAllSearches() {
+  const { accessToken } = getTokensInCookies();
+
+  const response = await fetch(
+    `${baseUrl}/api/user/clear/search-history/`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }
+  );
+
+  if (response.ok) {
+    // No content or successful deletion
+    return;
+  } else {
+    // Handle error
+    throw new Error('Failed to clear search history');
+  }
+}
+
+
+export async function removeSearchItem(id) {
+  const { accessToken } = getTokensInCookies();
+
+  const response = await fetch(
+    `${baseUrl}/api/user/search-history/${id}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    }
+  );
+
+  if (response.ok) {
+    // No content or successful deletion
+    return;
+  } else {
+    // Handle error
+    throw new Error('Failed to clear search history');
+  }
+}
+

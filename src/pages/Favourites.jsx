@@ -1,7 +1,20 @@
+import FavouriteProducts from "../components/FavouriteProducts"
+import Loader from "../components/Loader"
+import useFavourites from "../features/Favourites/useFavourites"
 
 function Favourites() {
+  const {isLoading, favourites} = useFavourites()
+
+  if(isLoading) return <Loader />
+
+  console.log(favourites)
+
+
   return (
-    <div>Favourites</div>
+    <>
+      
+      <FavouriteProducts prodcuts={favourites}/>
+    </>
   )
 }
 

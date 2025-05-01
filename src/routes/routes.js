@@ -1,14 +1,14 @@
 import { lazy } from 'react';
 
-const Search = lazy(() => import('../pages/Search'));
 const Featured = lazy(() => import('../pages/Featured'));
 const Favourites = lazy(() => import('../pages/Favourites'));
+const SignIn = lazy(() => import('../pages/SignIn'));
 
 const coreRoutes = [
     {
-        path: '/search',
-        title: 'Search',
-        component: Search,
+        path: '/signing',
+        title: 'SignIn',
+        component: SignIn,
     },
     {
         path: '/featured_products',
