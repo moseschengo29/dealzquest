@@ -61,12 +61,14 @@ function SearchSidebar({setSearchQuery}) {
               {search.query.toUpperCase()}
             </span>
             <FaXmark
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent <li> click from firing
                 setSelectedSearchId(search.id);
                 handleShowRemoveSearchItemModal();
               }}
-              className="text-white hover:text-red-500"
+              className="text-white hover:text-red-500 z-10"
             />
+ 
           </li>
         ))}
       </ul>

@@ -40,6 +40,24 @@ export async function getFavourites(){
   return data;
 }
 
+export async function getRecommendedProducts(){
+  const res = await fetch(`${baseUrl}/api/recommended_products/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    }
+    });
+
+
+  if(!res.ok){
+      throw new Error('Could not fetch the user search history');
+  }
+  const data = await res.json()
+
+  return data;
+}
+
 export async function removeItemFromFavourites(id) {
   const { accessToken } = getTokensInCookies();
 

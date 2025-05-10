@@ -10,6 +10,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import useFavourites from "../features/Favourites/useFavourites";
 import { useRemoveFavourite } from "../features/Favourites/useRemoveFavourite";
+import { Link } from "react-router-dom";
 
 const getSourceTagColor = (source) => {
   switch (source) {
@@ -291,7 +292,7 @@ const toggleFavorite = async (product) => {
     <div>
       <ul className="flex flex-wrap gap-12 mb-2 max-h-[64vh] overflow-y-scroll pb-8">
         {filteredProducts.map((product, index) => (
-          <li key={index} className="relative flex flex-col gap-3 bg-gray-900 p-4 max-w-[350px]">
+          <li key={index} className="relative flex flex-col gap-3 bg-gray-900 p-4 max-w-[320px]">
             <img
               src={product.image || 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'}
               alt={product.name}
@@ -307,7 +308,7 @@ const toggleFavorite = async (product) => {
                 </span>
                 <span className="flex items-start gap-1"><IoMdStar size={20} /><span>{product.rating}</span></span>
             </div>
-            <h1 className="text-lg font-semibold text-gray-300 hover:text-gray-400">{product.name}</h1>
+            <Link to={`/product/${product.id}`} className="text-lg font-semibold text-gray-200 hover:text-gray-300">{product.name}</Link>
             <div className="flex justify-between items-center">
               <h1 className="text-yellow-300 font-black text-xl">Ksh {product.price}</h1>
               <a href={product.url} target="_blank" rel="noreferrer">

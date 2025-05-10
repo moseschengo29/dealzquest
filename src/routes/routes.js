@@ -3,6 +3,7 @@ import { lazy } from 'react';
 const Featured = lazy(() => import('../pages/Featured'));
 const Favourites = lazy(() => import('../pages/Favourites'));
 const SignIn = lazy(() => import('../pages/SignIn'));
+const Product = lazy(() => import('../pages/Product'));
 
 const coreRoutes = [
     {
@@ -19,7 +20,13 @@ const coreRoutes = [
         path: '/favourites',
         title: 'Favourites',
         component: Favourites,
-    }
+    },
+    {
+        path: '/product/:product_id',
+        title: 'Product',
+        component: Product,
+    },
+
 ]
 
 const allRoutes = [...coreRoutes];

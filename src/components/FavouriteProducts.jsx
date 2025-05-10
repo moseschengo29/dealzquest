@@ -100,6 +100,8 @@ function FavouriteProducts({prodcuts}) {
           }
         }
       };
+
+      console.log(prodcuts)
       
   return (
     <div className='px-12'>

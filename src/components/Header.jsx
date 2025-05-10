@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import Button from "./Button";
@@ -42,14 +42,44 @@ const Header = () => {
 
         
         <ul className="justify-center items-center flex gap-8 text-base">
-          <Link className="text-base" to='/search'>Search</Link>
-          {currentUser && 
-          <>
-            <Link to='/favourites'>Favourites</Link>
-            <Link to='/featured_products'>Recommended Products</Link>
-          </>
-          }
+          <NavLink
+            to="/search"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-[#FFF94F] pb-1 text-[#FFF94F]"
+                : "text-[#FFF94F] hover:text-[#FFF94F]"
+            }
+          >
+            Search
+          </NavLink>
+
+          {currentUser && (
+            <>
+              <NavLink
+                to="/favourites"
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-[#FFF94F] pb-1 text-[#FFF94F]"
+                    : "text-[#FFF94F] hover:text-[#FFF94F]"
+                }
+              >
+                Favourites
+              </NavLink>
+
+              <NavLink
+                to="/featured_products"
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-[#FFF94F] pb-1 text-[#FFF94F]"
+                    : "text-[#FFF94F] hover:text-[#FFF94F]"
+                }
+              >
+                Recommended Products
+              </NavLink>
+            </>
+          )}
         </ul>
+
 
         {openNavigation && (
           <nav className={`fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}>
