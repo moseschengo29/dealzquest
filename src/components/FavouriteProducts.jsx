@@ -115,7 +115,7 @@ function FavouriteProducts({prodcuts}) {
                   className="w-full max-w-[310px] h-[370px] object-cover hover:scale-105 hover:opacity-50 transition-all duration-300 mb-6"
                 />
                 <button disabled={isDeleting} onClick={() => toggleFavorite(product)} className="absolute top-4 right-4 bg-black/40 p-2 rounded-full">
-                  <HiHeart className={`w-6 h-6 text-red-500`} />
+                  <HiHeart className={`w-6 h-6 ${localFavourites[product.id] ? "text-red-500" : "text-white stroke-white"}`} />
                 </button>
     
                 <div className="flex justify-between items-center -mt-4">
