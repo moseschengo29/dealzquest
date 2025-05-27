@@ -12,6 +12,8 @@ import Loader from "./components/Loader";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Search from "./pages/Search";
+import PageNotFound from "./pages/PageNotFound";
+import { CompareProvider } from "./context/CompareContext";
 
 
 const App = () => {
@@ -61,6 +63,7 @@ const App = () => {
     <>
     <QueryClientProvider client={queryClient}>
         <AuthProvider>
+          <CompareProvider>
         <ReactQueryDevtools initialIsOpen={false}/>
         <Toaster {...toasterStyle}/>
           <Routes>
@@ -69,6 +72,7 @@ const App = () => {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/*" element={<PageNotFound />} />
 
               <Route element={<ProtectedRoutes />}>
                 {allRoutes.map((route, index) => {
@@ -88,6 +92,7 @@ const App = () => {
                   </Route>
             </Route>
           </Routes>
+          </CompareProvider>
           </AuthProvider>
         </QueryClientProvider>
 

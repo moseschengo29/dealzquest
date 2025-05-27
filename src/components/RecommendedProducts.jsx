@@ -30,7 +30,7 @@ function RecommendedProducts({products, favourites}) {
     const queryClient = useQueryClient()
 
     const [localFavourites, setLocalFavourites] = useState(
-        () => favourites.reduce((acc, item) => {
+        () => favourites?.reduce((acc, item) => {
           acc[item.product.id] = true;
           return acc;
         }, {})

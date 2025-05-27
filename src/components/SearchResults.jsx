@@ -11,6 +11,9 @@ import toast from "react-hot-toast";
 import useFavourites from "../features/Favourites/useFavourites";
 import { useRemoveFavourite } from "../features/Favourites/useRemoveFavourite";
 import { Link } from "react-router-dom";
+import { useCompare } from "../context/CompareContext";
+import { MdCompareArrows } from "react-icons/md";
+
 
 const getSourceTagColor = (source) => {
   switch (source) {
@@ -36,6 +39,8 @@ function SearchResults({ searchQuery }) {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
 
+  const {compareItems, toggleCompare} = useCompare()
+
   const [selectedSources, setSelectedSources] = useState([])
 
   const queryClient = useQueryClient();
@@ -44,6 +49,7 @@ function SearchResults({ searchQuery }) {
 
 
   const toggleFilters = () => setShowFilters(!showFilters);
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -185,6 +191,7 @@ const toggleFavorite = async (product) => {
     }
   }
 };
+
   
 
   console.log(favourites)
@@ -301,6 +308,37 @@ const toggleFavorite = async (product) => {
             <button disabled={isDeleting} onClick={() => toggleFavorite(product)} className="absolute top-4 right-4 bg-black/40 p-2 rounded-full">
               <HiHeart className={`w-6 h-6 ${localFavourites[product.id] ? "text-red-500" : "text-white stroke-white"}`} />
             </button>
+            <button
+  onClick={() => toggleCompare(product)}
+  className="absolute top-4 left-4 bg-black/40 p-2 rounded-full flex items-center gap-2"
+  title={
+    compareItems.some((item) => item.id === product.id)
+      ? "Remove from Compare"
+      : compareItems.length >= 4
+      ? "Maximum 4 items"
+      : "Add to Compare"
+  }
+>
+  <MdCompareArrows
+    size={24}
+    className={`transition-colors duration-300 ${
+      compareItems.some((item) => item.id === product.id)
+        ? "text-green-400"
+        : compareItems.length >= 4
+        ? "text-gray-500"
+        : "text-white"
+    }`}
+  /> 
+  <span className={`transition-colors duration-300 ${
+      compareItems.some((item) => item.id === product.id)
+        ? "text-green-400"
+        : compareItems.length >= 4
+        ? "text-gray-500"
+        : "text-white"
+    }`}>Compare</span>
+</button>
+
+
 
             <div className="flex justify-between items-center -mt-4">
                 <span className={`rounded-lg py-1 px-3 text-sm ${getSourceTagColor(product.source)}`}>

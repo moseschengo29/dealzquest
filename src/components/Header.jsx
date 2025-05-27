@@ -4,13 +4,16 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownUser from "./DropdownUser";
 import { useAuth } from "../context/AuthContext";
+import { MdOutlineCompareArrows } from "react-icons/md";
+import { useCompare } from "../context/CompareContext";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const { currentUser, logoutuser } = useAuth();
+  const {compareItems, setCompareItems} = useCompare()
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -21,7 +24,10 @@ const Header = () => {
       disablePageScroll();
     }
   };
-  console.log(currentUser)
+
+  useEffect(() => {
+    console.log(compareItems)
+  }, [compareItems, setCompareItems])
 
 
   
@@ -76,6 +82,17 @@ const Header = () => {
               >
                 Recommended Products
               </NavLink>
+
+              <NavLink
+                to="/reviews"
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-[#FFF94F] pb-1 text-[#FFF94F]"
+                    : "text-[#FFF94F] hover:text-[#FFF94F]"
+                }
+              >
+                Reviews
+              </NavLink>
             </>
           )}
         </ul>
@@ -96,6 +113,10 @@ const Header = () => {
           </div>
         ) : (
           <div className="flex gap-4 items-center">
+            <Link to={'/compare_prices'} className="relative">
+            <MdOutlineCompareArrows size={40} />
+              <span className=" px-1.5 bg-yellow-400 text-black text-[10px] absolute rounded-full bottom-0 right-0">{compareItems?.length || '0'}</span>
+            </Link>
             <span className="text-sm">HELLO, {currentUser.username.toUpperCase()}</span>
             <DropdownUser logout={logoutuser}/>
           </div>

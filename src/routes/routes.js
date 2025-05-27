@@ -4,6 +4,8 @@ const Featured = lazy(() => import('../pages/Featured'));
 const Favourites = lazy(() => import('../pages/Favourites'));
 const SignIn = lazy(() => import('../pages/SignIn'));
 const Product = lazy(() => import('../pages/Product'));
+const Reviews = lazy(() => import('../pages/Reviews'));
+const ComparePrices = lazy(() => import('../pages/ComparePrices'));
 
 const coreRoutes = [
     {
@@ -25,6 +27,16 @@ const coreRoutes = [
         path: '/product/:product_id',
         title: 'Product',
         component: Product,
+    },
+    {
+        path: '/reviews',
+        title: 'Reviews',
+        component: Reviews,
+    },
+    {
+        path: '/compare_prices',
+        title: 'ComparePrices',
+        component: ComparePrices,
     },
 
 ]
