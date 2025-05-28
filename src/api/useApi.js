@@ -128,3 +128,68 @@ export async function removeSearchItem(id) {
   }
 }
 
+export async function getReviews(){
+  const res = await fetch(`${baseUrl}/api/reviews/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    }
+    });
+
+
+  if(!res.ok){
+      throw new Error('Could not fetch the user search history');
+  }
+  const data = await res.json()
+
+  return data;
+}
+
+export async function postReview(formData) {
+  const { accessToken } = getTokensInCookies();
+
+  const response = await fetch(`${baseUrl}/api/reviews/`, {
+      method: 'POST',
+      headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json', // 👈 crucial
+      },
+      body: JSON.stringify(formData), // ✅ Critical: Convert JS object to JSON string
+  });
+
+  const data = await response.json();
+
+  if (response.ok || response.status === 201) {
+      return data;
+  } else if (response.status === 400) {
+      throw new Error(data.message);
+  } else {
+      throw new Error('Failed to add staff');
+  }
+}
+
+export async function postVote(formData) {
+  console.log(formData)
+  const { accessToken } = getTokensInCookies();
+
+  const response = await fetch(`${baseUrl}/api/review-votes/`, {
+      method: 'POST',
+      headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json', // 👈 crucial
+
+      },
+      body: JSON.stringify(formData), // ✅ Critical: Convert JS object to JSON string
+    });
+
+  const data = await response.json();
+
+  if (response.ok || response.status === 201) {
+      return data;
+  } else if (response.status === 400) {
+      throw new Error(data.message);
+  } else {
+      throw new Error('Failed to add staff');
+  }
+}

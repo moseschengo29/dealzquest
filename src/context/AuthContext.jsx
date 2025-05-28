@@ -55,6 +55,7 @@ function AuthProvider ({children}) {
                     setUser(user)                           
             
                     navigate('/');
+                    window.location.reload(); 
                 
             } else {
                 setisLoading(false);
@@ -98,9 +99,10 @@ function AuthProvider ({children}) {
     //     }
     // };
 
-    function logoutuser (){
-        logout()
-        setCurrentUser(null)
+    function logoutuser() {
+        logout();
+        setCurrentUser(null);
+        window.location.reload(); // Reloads the page
     }
 
     async function register (formData) {
